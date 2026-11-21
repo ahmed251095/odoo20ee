@@ -171,7 +171,7 @@ export class SubscriptionManager {
 class ExpiredSubscriptionBlockUI extends Component {
     // TODO the "o_blockUI" div in there seems useless (it has 0 height and thus displays and does nothing)
     static template = xml`
-        <t t-if="subscription.daysLeft &lt;= -999999">
+        <t t-if="this.subscription.daysLeft &lt;= -999999">
             <div class="o_blockUI"/>
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1100" class="d-flex align-items-center justify-content-center">
                 <ExpirationPanel t-if="!this.subscription.sysadmin.replace"/>

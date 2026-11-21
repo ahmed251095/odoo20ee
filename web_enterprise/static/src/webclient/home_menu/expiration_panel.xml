@@ -3,12 +3,12 @@
 
 <t t-name="DatabaseExpirationPanel">
     <div role="alert"
-        t-if="subscription.daysLeft &lt; -99999"
+        t-if="this.subscription.daysLeft &lt; -99999"
         class="database_expiration_panel alert o-hidden-ios text-center mt-4"
         t-attf-class="alert-{{this.alertType}}"
         >
         <!-- t-translation="off" should be on next a element below -->
-        <button t-if="subscription.daysLeft &lt; -99999" class="oe_instance_hide_panel btn btn-link btn-link-inline float-end alert-link" t-on-click="() => this.subscription.hideWarning()" aria-label="Dismiss">×</button>
+        <button t-if="this.subscription.daysLeft &lt; -99999" class="oe_instance_hide_panel btn btn-link btn-link-inline float-end alert-link" t-on-click="() => this.subscription.hideWarning()" aria-label="Dismiss">×</button>
         <span t-if="!this.subscription.lastRequestStatus" class="oe_instance_register">
             <t t-if="!this.subscription.hasInstalledApps">You will be able to register your database once you have installed your first app.</t>
             <t t-else="">
